@@ -1,0 +1,8 @@
+Debug
+Build
+settings
+*.dep
+*.ewd
+*.ewp
+*.ewt
+*.eww
