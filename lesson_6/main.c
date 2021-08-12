@@ -1,17 +1,11 @@
-#include "tm4c123gh6pm.h"
-#define RCGCGPIO (*((unsigned int *) 0x400FE608U)) // Clock gating control
-
-#define    GPIOF_BASE   0x40025000U
-#define    GPIOF_DIR    (*((volatile unsigned long*) (GPIOF_BASE + 0x400U)))
-#define    GPIOF_DEN    (*((volatile unsigned long*) (GPIOF_BASE + 0x51CU)))
-#define    GPIOF_DATA   (*((volatile unsigned long*) (GPIOF_BASE + 0x3FCU)))
+#include "include/lm4f120h5qr.h"
 
 void delay();
 
 int main()
 {
     // Set RCGCGPIO with 0x20U - Give Port F a clock
-    RCGCGPIO = 0x20U;
+    SYSCTL_RCGCGPIO_R = 0x20U;
     
     // Set memory R1 R2 and R3 to 1 in GPIODIR - Direction Output
     GPIOF_DIR = 0x0EU;
