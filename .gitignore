@@ -7,4 +7,5 @@ settings
 *.ewt
 *.eww
 CMSIS_5-develop
-cc_workspace
+cc_workspaceqpc/
+qpc

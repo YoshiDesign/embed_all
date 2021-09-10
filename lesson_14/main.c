@@ -15,6 +15,7 @@ int main() {
     SysTick_Handler();
 
     __enable_interrupt();
+
     while (1) {
         GPIOF_AHB->DATA_Bits[LED_GREEN] = LED_GREEN;
         GPIOF_AHB->DATA_Bits[LED_GREEN] = 0U;
