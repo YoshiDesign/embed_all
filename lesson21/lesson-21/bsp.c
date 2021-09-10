@@ -10,7 +10,19 @@
 #define LED_GREEN (1U << 3)
 
 // l_tickCtr is our means of communication between our foreground and background
+/**
+* To avoid race conditions due to the preemption of the background loop
+	by the foreground, these kinds of variables must be volatile, and also
+	have interrupts disabled upon any access to them from the background, re-enabling them when
+	they're good to go.
+*/
 static uint32_t volatile l_tickCtr;
+
+/**
+ * Any routines with time constraints on them can only 
+ * execute reliably in the foreground. This, however can cause
+ * hangups in the background, so use them sparingly
+ */
 
 void SysTick_Handler(void) {
     ++l_tickCtr;

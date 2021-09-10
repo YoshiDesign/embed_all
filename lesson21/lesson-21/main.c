@@ -18,7 +18,10 @@ int main() {
 
 /* background code: non-blocking version */
 int main() {
+	
+		// Setup function
     BSP_init();
+	
     while (1) {
         /* Blinky polling state machine */
         static enum {
