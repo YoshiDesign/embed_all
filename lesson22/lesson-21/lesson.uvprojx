@@ -420,6 +420,21 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>SKiOS</GroupName>
+          <Files>
+            <File>
+              <FileName>skios.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\skios.c</FilePath>
+            </File>
+            <File>
+              <FileName>skios.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\skios.h</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
